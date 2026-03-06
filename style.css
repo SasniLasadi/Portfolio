@@ -28,6 +28,204 @@ body {
   cursor: none;
 }
 
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.6;
+}
+
+/* CURSOR */
+.cursor {
+  width: 12px;
+  height: 12px;
+  background: var(--rust);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+  mix-blend-mode: multiply;
+}
+.cursor.hover {
+  width: 40px;
+  height: 40px;
+  background: var(--gold);
+  opacity: 0.5;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  z-index: 50;
+  mix-blend-mode: multiply;
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+.nav-links a:hover { opacity: 1; }
+
+/* HERO */
+#hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 3rem 5rem 3rem;
+  position: relative;
+}
+
+.hero-number {
+  font-size: 22vw;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--dust);
+  position: absolute;
+  bottom: -0.15em;
+  left: -0.05em;
+  line-height: 1;
+  user-select: none;
+  z-index: 0;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.3s ease forwards;
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.5s ease forwards;
+}
+.hero-name em { font-style: italic; color: var(--rust); }
+
+.hero-desc {
+  font-size: 0.8rem;
+  line-height: 1.9;
+  max-width: 320px;
+  color: rgba(26, 20, 16, 0.7);
+  opacity: 0;
+  animation: fadeUp 0.8s 0.7s ease forwards;
+}
+
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image-frame {
+  position: absolute;
+  top: 15%; right: 10%;
+  width: 65%;
+  aspect-ratio: 3/4;
+  opacity: 0;
+  animation: fadeIn 1.2s 0.9s ease forwards;
+}
+
+.hero-image-inner {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #D4B896 0%, #A0856A 50%, #6B4F38 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image-inner::after {
+  content: 'AC';
+  font-family: 'Playfair Display', serif;
+  font-size: 8rem;
+  color: rgba(255, 255, 255, 0.15);
+  position: absolute;
+  bottom: 1rem; right: 1.5rem;
+  line-height: 1;
+}
+
+.frame-line { position: absolute; background: var(--rust); }
+.frame-line.top    { top: -8px;    left: -8px;  right: 8px;   height: 1px; }
+.frame-line.left   { top: -8px;    left: -8px;  bottom: 8px;  width: 1px; }
+.frame-line.bottom { bottom: -8px; left: 8px;   right: -8px;  height: 1px; }
+.frame-line.right  { top: 8px;     right: -8px; bottom: -8px; width: 1px; }
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 3rem; left: 3rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(26, 20, 16, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 1.4s ease forwards;
+}
+.hero-scroll-hint::after {
+  content: '';
+  width: 40px; height: 1px;
+  background: rgba(26, 20, 16, 0.3);
+}
+
+/* KEYFRAMES */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
 /* NOISE TEXTURE OVERLAY */
 body::before {
   content: '';
