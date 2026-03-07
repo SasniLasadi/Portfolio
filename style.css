@@ -15,9 +15,7 @@
   --shadow: rgba(26, 20, 16, 0.12);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--cream);
@@ -37,10 +35,9 @@ body::before {
   opacity: 0.6;
 }
 
-/* CURSOR */
+/* ─── CURSOR ─── */
 .cursor {
-  width: 12px;
-  height: 12px;
+  width: 12px; height: 12px;
   background: var(--rust);
   border-radius: 50%;
   position: fixed;
@@ -51,13 +48,12 @@ body::before {
   mix-blend-mode: multiply;
 }
 .cursor.hover {
-  width: 40px;
-  height: 40px;
+  width: 40px; height: 40px;
   background: var(--gold);
   opacity: 0.5;
 }
 
-/* NAV */
+/* ─── NAV ─── */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -77,11 +73,7 @@ nav {
   text-decoration: none;
 }
 
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
+.nav-links { display: flex; gap: 2rem; list-style: none; }
 
 .nav-links a {
   font-size: 0.7rem;
@@ -91,15 +83,36 @@ nav {
   text-decoration: none;
   opacity: 0.6;
   transition: opacity 0.3s ease;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: var(--rust);
+  transition: width 0.3s ease;
 }
 .nav-links a:hover { opacity: 1; }
+.nav-links a:hover::after { width: 100%; }
 
-/* HERO */
+/* ─── HERO ─── */
 #hero {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   position: relative;
+  overflow: hidden;
+}
+
+/* ─── HERO CANVAS (animated background) ─── */
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero-left {
@@ -108,6 +121,7 @@ nav {
   justify-content: flex-end;
   padding: 0 3rem 5rem 3rem;
   position: relative;
+  z-index: 2;
 }
 
 .hero-number {
@@ -120,12 +134,13 @@ nav {
   left: -0.05em;
   line-height: 1;
   user-select: none;
-  z-index: 0;
+  z-index: 1;
+  opacity: 0.5;
 }
 
 .hero-text {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-tag {
@@ -140,7 +155,7 @@ nav {
 
 .hero-name {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(3rem, 6vw, 5rem);
   line-height: 1.05;
   letter-spacing: -0.02em;
   margin-bottom: 2rem;
@@ -150,9 +165,9 @@ nav {
 .hero-name em { font-style: italic; color: var(--rust); }
 
 .hero-desc {
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 1.9;
-  max-width: 320px;
+  max-width: 540px;
   color: rgba(26, 20, 16, 0.7);
   opacity: 0;
   animation: fadeUp 0.8s 0.7s ease forwards;
@@ -161,6 +176,7 @@ nav {
 .hero-right {
   position: relative;
   overflow: hidden;
+  z-index: 2;
 }
 
 .hero-image-frame {
@@ -172,15 +188,23 @@ nav {
   animation: fadeIn 1.2s 0.9s ease forwards;
 }
 
+/* Profile photo */
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Fallback if no photo — keeps the gradient placeholder */
 .hero-image-inner {
   width: 100%; height: 100%;
   background: linear-gradient(135deg, #D4B896 0%, #A0856A 50%, #6B4F38 100%);
   position: relative;
   overflow: hidden;
 }
-
 .hero-image-inner::after {
-  content: 'AC';
+  content: 'SL';
   font-family: 'Playfair Display', serif;
   font-size: 8rem;
   color: rgba(255, 255, 255, 0.15);
@@ -207,6 +231,7 @@ nav {
   gap: 1rem;
   opacity: 0;
   animation: fadeUp 0.8s 1.4s ease forwards;
+  z-index: 2;
 }
 .hero-scroll-hint::after {
   content: '';
@@ -214,25 +239,123 @@ nav {
   background: rgba(26, 20, 16, 0.3);
 }
 
-/* KEYFRAMES */
+/* ─── MARQUEE ─── */
+.marquee-band {
+  background: var(--ink);
+  padding: 0.9rem 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+}
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 18s linear infinite;
+}
+.marquee-item {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--cream);
+  padding: 0 2.5rem;
+}
+.marquee-dot { color: var(--rust); margin: 0 1rem; }
+
+/* ─── ABOUT ─── */
+#about {
+  padding: 8rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--rust);
+  padding-top: 0.4rem;
+}
+
+.about-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.about-content p {
+  font-size: 1rem;
+  line-height: 2;
+  color: rgba(26, 20, 16, 0.72);
+  max-width: 700px;
+  margin-bottom: 1.5rem;
+}
+
+.stats-row {
+  display: flex;
+  gap: 6rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--dust);
+}
+
+.stat-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--rust);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.stat-item { transition: transform 0.3s ease; }
+.stat-item:hover { transform: translateY(-4px); }
+
+.stat-item p {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(26, 20, 16, 0.5);
+  margin-top: 0.3rem;
+  margin-bottom: 0;
+}
+
+/* ─── REVEAL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── KEYFRAMES ─── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-
-
-/* NOISE TEXTURE OVERLAY */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 100;
-  opacity: 0.6;
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 1.5rem; }
+  #hero { grid-template-columns: 1fr; min-height: auto; padding-top: 7rem; }
+  .hero-right { height: 55vw; }
+  .hero-image-frame { width: 55%; top: 10%; right: 5%; }
+  #about { grid-template-columns: 1fr; gap: 1.5rem; padding-left: 1.5rem; padding-right: 1.5rem; }
+  .stats-row { gap: 2.5rem; }
+}
+
+
+
+
+
+
