@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "strict": true,
+    "outDir": "./",
+    "rootDir": "./",
+    "removeComments": false,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "strictNullChecks": true
+  },
+  "include": ["script.ts"],
+  "exclude": ["node_modules"]
+}
