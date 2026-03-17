@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Sasni Lasadi</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="cursor" id="cursor"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Sasni Lasadi</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#memories">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-left">
+      <span class="hero-number">SL</span>
+      <div class="hero-text">
+        <p class="hero-tag">Computer Science Undergraduate</p>
+        <h1 class="hero-name">Crafting <br /><em>solutions</em><br />through code.</h1>
+        <p class="hero-desc">A computer science student passionate about building applications, exploring new
+          technologies, and solving problems with clean, efficient logic.</p>
+        <div class="hero-cta">
+          <a href="#work" class="btn-hero">View Projects</a>
+          <a href="assets/CV_SasniLasadi.pdf" download class="btn-hero btn-hero--outline">Download CV</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-image-frame">
+        <img src="assets/profilepic.png" alt="Sasni Lasadi" class="hero-photo" />
+        <div class="frame-line top"></div>
+        <div class="frame-line left"></div>
+        <div class="frame-line bottom"></div>
+        <div class="frame-line right"></div>
+      </div>
+    </div>
+    <p class="hero-scroll-hint">Scroll to explore</p>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-band">
+    <div class="marquee-track">
+      <span class="marquee-item">Software Development<span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Web Development<span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Frontend Development<span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Backend Development<span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Database Management<span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Object-Oriented Programming<span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Software Development<span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Web Development<span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Frontend Development<span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Backend Development<span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Database Management<span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Object-Oriented Programming<span class="marquee-dot">✦</span></span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+
+    <div class="about-left reveal">
+      <div class="section-label">00 / About</div>
+      <div class="about-decoration">
+        <div class="about-deco-line"></div>
+        <div class="about-deco-box">
+          <span class="about-deco-initials">SL</span>
+        </div>
+        <div class="about-deco-line"></div>
+        <div class="about-deco-tags">
+          <span>Full-Stack</span>
+          <span>CS Student</span>
+          <span>Sri Lanka</span>
+          <span>Est. 2024</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-content reveal">
+      <h2>Hi, I'm Sasni Lasadi from Sri Lanka.</h2>
+      <p>I'm a second year Computer Science undergraduate at IIT Sri Lanka, pursuing a BSc(Hons) in Computer Science
+        awarded by the University of Westminster. I'm passionate about full-stack development and building practical
+        solutions that make a real difference.</p>
+      <p>When I'm not coding, I'm exploring new technologies, working on personal projects, or collaborating with peers.
+        I believe great software is built with both technical skill and a genuine desire to solve real problems.</p>
+
+      <div class="about-details">
+        <div class="detail-item">
+          <span class="detail-label">University</span>
+          <span class="detail-value">Informatics Institute of Technology(IIT), Sri Lanka</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Degree</span>
+          <span class="detail-value">BSc(Hons) Computer Science — University of Westminster</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Location</span>
+          <span class="detail-value">Colombo, Sri Lanka</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Status</span>
+          <span class="detail-value detail-status">● Seeking Internship</span>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <h3>5+</h3>
+          <p>Projects Built</p>
+        </div>
+        <div class="stat-item">
+          <h3>6+</h3>
+          <p>Technologies</p>
+        </div>
+        <div class="stat-item">
+          <h3>2024</h3>
+          <p>Started Coding</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="inner">
+      <div class="work-header reveal">
+        <div>
+          <div class="section-label">01 / Selected Projects</div>
+          <h2>Recent Projects</h2>
+        </div>
+      </div>
+      <div class="project-grid">
+
+        <div class="project-card reveal">
+          <div class="project-card-bg bg-1"></div>
+          <div class="project-card-content">
+            <span class="project-num">001</span>
+            <div class="project-visual">
+              <svg class="project-shape" width="100" height="100" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#F5F0E8" stroke-width="1" />
+                <circle cx="60" cy="60" r="30" fill="none" stroke="#C4461A" stroke-width="1" />
+                <line x1="10" y1="60" x2="110" y2="60" stroke="#F5F0E8" stroke-width="0.5" />
+                <line x1="60" y1="10" x2="60" y2="110" stroke="#F5F0E8" stroke-width="0.5" />
+              </svg>
+            </div>
+            <div class="project-tags-row">
+              <span class="project-tech">React</span>
+              <span class="project-tech">Node.js</span>
+              <span class="project-tech">MongoDB</span>
+            </div>
+            <p class="project-tag">Education / Learning</p>
+            <h3 class="project-title">CrackCode Gamified Learning Platform</h3>
+            <p class="project-desc">A gamified narrative-driven learning platform designed to make coding education
+              engaging and interactive.</p>
+            <a href="https://github.com/CrackCode-dev/CrackCode-Main" target="_blank" class="project-link">GitHub →</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card-bg bg-2"></div>
+          <div class="project-card-content">
+            <span class="project-num">002</span>
+            <div class="project-visual">
+              <svg class="project-shape" width="100" height="100" viewBox="0 0 120 120">
+                <rect x="20" y="20" width="80" height="80" fill="none" stroke="#F5F0E8" stroke-width="1"
+                  transform="rotate(15 60 60)" />
+                <rect x="30" y="30" width="60" height="60" fill="none" stroke="#B8932A" stroke-width="1"
+                  transform="rotate(-10 60 60)" />
+              </svg>
+            </div>
+            <div class="project-tags-row">
+              <span class="project-tech">React.js</span>
+              <span class="project-tech">CSS</span>
+            </div>
+            <p class="project-tag">Web Page / Marketing</p>
+            <h3 class="project-title">Pizza Delight Website</h3>
+            <p class="project-desc">A simple and responsive pizza ordering website built with React.js, featuring
+              reusable components and a modern UI layout.</p>
+            <a href="https://github.com/SasniLasadi/Pizza-Delight-Website" target="_blank" class="project-link">GitHub
+              →</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card-bg bg-3"></div>
+          <div class="project-card-content">
+            <span class="project-num">003</span>
+            <div class="project-visual">
+              <svg class="project-shape" width="100" height="100" viewBox="0 0 120 120">
+                <polygon points="60,10 110,90 10,90" fill="none" stroke="#F5F0E8" stroke-width="1" />
+                <polygon points="60,35 88,80 32,80" fill="none" stroke="#C4461A" stroke-width="1" />
+              </svg>
+            </div>
+            <div class="project-tags-row">
+              <span class="project-tech">HTML</span>
+              <span class="project-tech">CSS</span>
+              <span class="project-tech">JavaScript</span>
+            </div>
+            <p class="project-tag">Web Page / UN SDG2</p>
+            <h3 class="project-title">Zero Hunger Website</h3>
+            <p class="project-desc">A web project promoting UN SDG 2: Zero Hunger, with an interactive homepage, profile
+              page, sitemap, splash screen, and feedback page.</p>
+            <a href="https://github.com/SasniLasadi/Zero-Hunger-Website" target="_blank" class="project-link">GitHub
+              →</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card-bg bg-4"></div>
+          <div class="project-card-content">
+            <span class="project-num">004</span>
+            <div class="project-visual">
+              <svg class="project-shape" width="100" height="100" viewBox="0 0 120 120">
+                <line x1="20" y1="100" x2="20" y2="20" stroke="#F5F0E8" stroke-width="1" />
+                <line x1="20" y1="100" x2="110" y2="100" stroke="#F5F0E8" stroke-width="1" />
+                <polyline points="30,80 50,55 70,65 90,30 110,40" fill="none" stroke="#C4461A" stroke-width="1.5" />
+                <circle cx="30" cy="80" r="3" fill="#B8932A" />
+                <circle cx="50" cy="55" r="3" fill="#B8932A" />
+                <circle cx="70" cy="65" r="3" fill="#B8932A" />
+                <circle cx="90" cy="30" r="3" fill="#B8932A" />
+                <circle cx="110" cy="40" r="3" fill="#B8932A" />
+              </svg>
+            </div>
+            <div class="project-tags-row">
+              <span class="project-tech">Python</span>
+              <span class="project-tech">CSV</span>
+              <span class="project-tech">Data Analysis</span>
+            </div>
+            <p class="project-tag">Data / Analytics</p>
+            <h3 class="project-title">Traffic Data Analysis System</h3>
+            <p class="project-desc">A Python project that analyses traffic data from a CSV file using data processing
+              and visualisation techniques.</p>
+            <a href="https://github.com/SasniLasadi/Traffic-Data-Analysis-System" target="_blank"
+              class="project-link">GitHub →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="skills-left">
+      <div class="section-label reveal">02 / Expertise</div>
+      <h2 class="reveal">Tools of<br>the trade.</h2>
+      <p class="reveal">A focused set of skills built through coursework, personal projects, and a relentless drive to
+        learn and build.</p>
+    </div>
+    <div class="skill-bars reveal">
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name">Web Development</span><span class="skill-pct">85%</span></div>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" style="width:85%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name">Frontend (HTML / CSS / JS)</span><span
+            class="skill-pct">80%</span></div>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" style="width:80%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name">Backend Development (SQL / MongoDB)</span><span
+            class="skill-pct">72%</span></div>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" style="width:72%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name">Database Management</span><span class="skill-pct">70%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" style="width:70%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name">Object-Oriented Programming</span><span
+            class="skill-pct">78%</span></div>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" style="width:78%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name">TypeScript</span><span class="skill-pct">65%</span></div>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" style="width:65%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <div class="cv-inner">
+      <div class="cv-header reveal">
+        <div class="section-label">03 / Résumé</div>
+        <h2>The journey<br>so <em>far.</em></h2>
+      </div>
+      <div class="cv-body">
+
+        <div class="cv-col reveal">
+          <div class="cv-col-label">
+            <span class="cv-col-num">01</span>
+            <span>Education</span>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-year">2024 – Present</div>
+            <div class="cv-entry-content">
+              <h4>BSc(Hons) Computer Science</h4>
+              <p class="cv-place">University of Westminster — via IIT Sri Lanka</p>
+              <span class="cv-badge cv-badge--gold">2nd Year Undergraduate</span>
+            </div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-year">2021 – 2023</div>
+            <div class="cv-entry-content">
+              <h4>G.C.E Advanced Level</h4>
+              <p class="cv-place">Southlands College</p>
+              <p class="cv-place">Combined Maths, Physics, Chemistry</p>
+              <span class="cv-badge cv-badge--gold">1C and 2S Passes</span>
+            </div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-year">2020</div>
+            <div class="cv-entry-content">
+              <h4>G.C.E Ordinary Level</h4>
+              <p class="cv-place">Southlands College</p>
+              <span class="cv-badge">7A, 1B and 1C passes</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-col reveal">
+          <div class="cv-col-label">
+            <span class="cv-col-num">02</span>
+            <span>Achievements</span>
+          </div>
+          <div class="cv-entry cv-entry--featured">
+            <div class="cv-year">2025</div>
+            <div class="cv-entry-content">
+              <h4>Advanced Tier — Coderally 6.0</h4>
+              <p class="cv-place">Competitive Programming</p>
+              <p class="cv-desc">Achieved selection to the Advanced Tier based on selection week performance, showcasing
+                technical skills, collaboration, and innovative problem-solving under competitive conditions.</p>
+            </div>
+          </div>
+          <div class="cv-download-wrap">
+            <p class="cv-download-hint">Want the full picture?</p>
+            <a href="assets/CV_SasniLasadi.pdf" download class="btn-cv">
+              <span>⬇ Download CV (PDF)</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMORIES -->
+  <section id="memories">
+    <div class="memories-inner">
+      <div class="memories-header reveal">
+        <div class="section-label">04 / Gallery</div>
+        <h2>Moments &amp;<br><em>Memories.</em></h2>
+        <p>Snapshots from university life, hackathons, and the moments I lived.</p>
+      </div>
+      <div class="memories-grid">
+        <div class="memory-item memory-tall reveal">
+          <img src="assets/IMG1.JPG" alt="Memory" />
+        </div>
+        <div class="memory-item reveal">
+          <img src="assets/IMG7.JPG" alt="Memory" />
+        </div>
+        <div class="memory-item reveal">
+          <img src="assets/IMG3.JPG" alt="Memory" />
+        </div>
+        <div class="memory-item memory-wide reveal">
+          <img src="assets/IMG4.JPEG" alt="Memory" />
+        </div>
+        <div class="memory-item reveal">
+          <img src="assets/IMG9.jpg" alt="Memory" />
+        </div>
+        <div class="memory-item reveal">
+          <img src="assets/IMG6.jpg" alt="Memory" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+
+      <div class="contact-header reveal">
+        <div class="section-label">05 / Contact</div>
+        <h2>Turning curiosity<br>into <em>code.</em></h2>
+        <p>Whether you have an internship opportunity, a collaboration idea, or just want to connect — my inbox is
+          always open.</p>
+      </div>
+
+      <div class="contact-body">
+
+        <div class="contact-info reveal">
+          <a href="mailto:sasnilasadi410@gmail.com" class="contact-info-item">
+            <span class="contact-info-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+            </span>
+            <span class="contact-info-text">
+              <span class="contact-info-label">Email</span>
+              <span class="contact-info-value">sasnilasadi410@gmail.com</span>
+            </span>
+          </a>
+          <a href="https://github.com/SasniLasadi" target="_blank" class="contact-info-item">
+            <span class="contact-info-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+            </span>
+            <span class="contact-info-text">
+              <span class="contact-info-label">GitHub</span>
+              <span class="contact-info-value">SasniLasadi</span>
+            </span>
+          </a>
+          <a href="https://www.linkedin.com/in/sasni-lasadi-6bb1ab32a/" target="_blank" class="contact-info-item">
+            <span class="contact-info-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </span>
+            <span class="contact-info-text">
+              <span class="contact-info-label">LinkedIn</span>
+              <span class="contact-info-value">sasni-lasadi</span>
+            </span>
+          </a>
+          <a href="tel:+94778585691" class="contact-info-item">
+            <span class="contact-info-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.5 16z" />
+              </svg>
+            </span>
+            <span class="contact-info-text">
+              <span class="contact-info-label">Phone</span>
+              <span class="contact-info-value">+94 77 858 5691</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="contact-form reveal">
+          <div class="form-field">
+            <label>Your Name</label>
+            <input type="text" placeholder="Jane Smith" />
+          </div>
+          <div class="form-field">
+            <label>Email Address</label>
+            <input type="email" placeholder="jane@company.com" />
+          </div>
+          <div class="form-field">
+            <label>Message</label>
+            <textarea placeholder="Tell me about your project..."></textarea>
+          </div>
+          <button class="btn-send"><span>Send Message →</span></button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-bottom">
+      <p>© 2026 Sasni Lasadi · Designed &amp; Built with care · Colombo, Sri Lanka</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
