@@ -18,17 +18,17 @@ interface ColorMap {
   rust: string;
   gold: string;
   dust: string;
-  ink:  string;
+  ink: string;
 }
 
 interface ContactFormData {
-  name:    string;
-  email:   string;
+  name: string;
+  email: string;
   message: string;
 }
 
 interface ValidationResult {
-  valid:   boolean;
+  valid: boolean;
   message: string;
 }
 
@@ -41,7 +41,7 @@ const cursorEl = document.getElementById('cursor') as HTMLDivElement | null;
 if (cursorEl) {
   document.addEventListener('mousemove', (e: MouseEvent): void => {
     cursorEl.style.left = `${e.clientX}px`;
-    cursorEl.style.top  = `${e.clientY}px`;
+    cursorEl.style.top = `${e.clientY}px`;
   });
 
   const hoverTargets = document.querySelectorAll<HTMLElement>(
@@ -126,15 +126,15 @@ const sendBtn = document.querySelector<HTMLButtonElement>('.btn-send');
 
 if (sendBtn) {
   sendBtn.addEventListener('click', (): void => {
-    const nameInput   = document.querySelector<HTMLInputElement>('input[type="text"]');
-    const emailInput  = document.querySelector<HTMLInputElement>('input[type="email"]');
+    const nameInput = document.querySelector<HTMLInputElement>('input[type="text"]');
+    const emailInput = document.querySelector<HTMLInputElement>('input[type="email"]');
     const msgTextarea = document.querySelector<HTMLTextAreaElement>('textarea');
 
     if (!nameInput || !emailInput || !msgTextarea) return;
 
     const formData: ContactFormData = {
-      name:    nameInput.value,
-      email:   emailInput.value,
+      name: nameInput.value,
+      email: emailInput.value,
       message: msgTextarea.value,
     };
 
@@ -153,8 +153,8 @@ if (sendBtn) {
       }, 3000);
     }
 
-    nameInput.value   = '';
-    emailInput.value  = '';
+    nameInput.value = '';
+    emailInput.value = '';
     msgTextarea.value = '';
   });
 }
@@ -172,7 +172,7 @@ if (canvas) {
     rust: 'rgba(196, 70, 26,',
     gold: 'rgba(184, 147, 42,',
     dust: 'rgba(212, 201, 180,',
-    ink:  'rgba(26, 20, 16,',
+    ink: 'rgba(26, 20, 16,',
   };
 
   const COLOR_KEYS = Object.keys(COLORS) as (keyof ColorMap)[];
@@ -185,55 +185,55 @@ if (canvas) {
   ];
 
   let particles: Particle[] = [];
-  let animFrame:  number;
+  let animFrame: number;
 
   function resize(): void {
-    canvas!.width  = canvas!.offsetWidth;
+    canvas!.width = canvas!.offsetWidth;
     canvas!.height = canvas!.offsetHeight;
   }
 
   class Particle {
-    x:             number = 0;
-    y:             number = 0;
-    fontSize:      number = 0;
-    speedX:        number = 0;
-    speedY:        number = 0;
-    rotation:      number = 0;
+    x: number = 0;
+    y: number = 0;
+    fontSize: number = 0;
+    speedX: number = 0;
+    speedY: number = 0;
+    rotation: number = 0;
     rotationSpeed: number = 0;
-    opacity:       number = 0;
-    symbol:        string = '';
-    colorBase:     string = '';
+    opacity: number = 0;
+    symbol: string = '';
+    colorBase: string = '';
 
     constructor() { this.reset(); }
 
     reset(): void {
-      this.x             = Math.random() * canvas!.width;
-      this.y             = Math.random() * canvas!.height;
-      this.fontSize      = Math.random() * 22 + 10;
-      this.speedX        = (Math.random() - 0.5) * 0.5;
-      this.speedY        = (Math.random() - 0.5) * 0.5 - 0.15;
-      this.rotation      = Math.random() * Math.PI * 2;
+      this.x = Math.random() * canvas!.width;
+      this.y = Math.random() * canvas!.height;
+      this.fontSize = Math.random() * 22 + 10;
+      this.speedX = (Math.random() - 0.5) * 0.5;
+      this.speedY = (Math.random() - 0.5) * 0.5 - 0.15;
+      this.rotation = Math.random() * Math.PI * 2;
       this.rotationSpeed = (Math.random() - 0.5) * 0.012;
-      this.opacity       = Math.random() * 0.28 + 0.10;
-      this.symbol        = SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)];
-      this.colorBase     = COLORS[COLOR_KEYS[Math.floor(Math.random() * COLOR_KEYS.length)]];
+      this.opacity = Math.random() * 0.28 + 0.10;
+      this.symbol = SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)];
+      this.colorBase = COLORS[COLOR_KEYS[Math.floor(Math.random() * COLOR_KEYS.length)]];
     }
 
     draw(): void {
       ctx.save();
       ctx.translate(this.x, this.y);
       ctx.rotate(this.rotation);
-      ctx.fillStyle    = `${this.colorBase} ${this.opacity})`;
-      ctx.font         = `${this.fontSize}px 'DM Mono', monospace`;
-      ctx.textAlign    = 'center';
+      ctx.fillStyle = `${this.colorBase} ${this.opacity})`;
+      ctx.font = `${this.fontSize}px 'DM Mono', monospace`;
+      ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText(this.symbol, 0, 0);
       ctx.restore();
     }
 
     update(): void {
-      this.x        += this.speedX;
-      this.y        += this.speedY;
+      this.x += this.speedX;
+      this.y += this.speedY;
       this.rotation += this.rotationSpeed;
 
       const overflow: number = this.fontSize * 2;
@@ -284,7 +284,7 @@ if (canvas) {
 ══════════════════════════════════════ */
 
 const sections = document.querySelectorAll<HTMLElement>('section[id]');
-const navLinks  = document.querySelectorAll<HTMLAnchorElement>('.nav-links a');
+const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-links a');
 
 const navObserver = new IntersectionObserver(
   (entries: IntersectionObserverEntry[]): void => {
@@ -302,4 +302,22 @@ const navObserver = new IntersectionObserver(
 
 sections.forEach((section: HTMLElement): void => navObserver.observe(section));
 
+/* ══════════════════════════════════════
+   7. BURGER MENU
+══════════════════════════════════════ */
+const burger = document.getElementById('navBurger') as HTMLButtonElement | null;
+const mobileMenu = document.getElementById('navMobileMenu') as HTMLDivElement | null;
 
+if (burger && mobileMenu) {
+  burger.addEventListener('click', (): void => {
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+
+  document.querySelectorAll<HTMLAnchorElement>('.nav-mobile-link').forEach((link) => {
+    link.addEventListener('click', (): void => {
+      burger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+}

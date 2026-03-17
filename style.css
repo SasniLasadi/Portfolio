@@ -70,9 +70,12 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 3rem;
+  padding: 1.2rem 3rem;
   z-index: 50;
-  mix-blend-mode: multiply;
+  background: rgba(212, 201, 180, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212, 201, 180, 0.35);
 }
 
 .nav-logo {
@@ -117,6 +120,79 @@ nav {
 
 .nav-links a:hover::after {
   width: 100%;
+}
+
+/* Burger button — hidden on desktop */
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 60;
+}
+
+.nav-burger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-burger.open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.nav-burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-burger.open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Mobile dropdown menu */
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  background: rgba(212, 201, 180, 0.97);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 49;
+  border-bottom: 1px solid rgba(212, 201, 180, 0.5);
+  padding: 1rem 0;
+}
+
+.nav-mobile-menu ul {
+  list-style: none;
+}
+
+.nav-mobile-link {
+  display: block;
+  padding: 0.9rem 2rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s, padding-left 0.3s;
+  border-bottom: 1px solid rgba(26, 20, 16, 0.06);
+}
+
+.nav-mobile-link:hover {
+  opacity: 1;
+  padding-left: 2.5rem;
+}
+
+.nav-mobile-menu.open {
+  display: block;
 }
 
 /* ─── HERO ─── */
@@ -1466,29 +1542,17 @@ footer {
 
 @media (max-width: 600px) {
 
-  /* NAV */
+  /* NAV mobile */
   nav {
-    padding: 0.9rem 1.2rem;
-    background: rgba(245, 240, 232, 0.95);
-    backdrop-filter: blur(10px);
-    mix-blend-mode: normal;
-  }
-
-  .nav-logo {
-    font-size: 0.85rem;
-    white-space: nowrap;
-    flex-shrink: 0;
+    padding: 0.9rem 1.5rem;
   }
 
   .nav-links {
-    gap: 0.4rem;
-    flex-wrap: nowrap;
+    display: none;
   }
 
-  .nav-links a {
-    font-size: 0.42rem;
-    letter-spacing: 0.04em;
-    white-space: nowrap;
+  .nav-burger {
+    display: flex;
   }
 
   /* HERO */
