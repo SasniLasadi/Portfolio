@@ -1330,8 +1330,6 @@ footer {
 
   .nav-links {
     gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: flex-end;
   }
 
   .nav-links a {
@@ -1340,46 +1338,27 @@ footer {
   }
 
   #hero {
-    display: flex;
-    flex-direction: column-reverse;
+    grid-template-columns: 1fr;
     min-height: auto;
-    padding: 8rem 1.5rem 4rem 1.5rem;
-    gap: 3rem;
+    padding-top: 7rem;
   }
 
   .hero-right {
-    height: auto;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    height: 55vw;
   }
 
   .hero-image-frame {
-    position: relative;
-    width: 60%;
-    max-width: 320px;
-    top: 0;
-    right: 0;
+    width: 55%;
+    top: 10%;
+    right: 5%;
   }
 
   .hero-left {
-    padding: 0;
-    align-items: center;
-    text-align: center;
-  }
-
-  .hero-desc {
-    margin-left: auto;
-    margin-right: auto;
+    padding: 0 1.5rem 4rem;
   }
 
   .hero-cta {
     flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .hero-scroll-hint {
-    display: none;
   }
 
   #about {
@@ -1496,37 +1475,20 @@ footer {
 
 @media (max-width: 600px) {
   nav {
-    flex-direction: column;
-    padding: 1.5rem 1rem 1rem 1rem;
-    gap: 1rem;
+    padding: 1rem;
   }
 
   .nav-links {
-    gap: 0.8rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    gap: 0.6rem;
   }
 
   .nav-links a {
-    font-size: 0.55rem;
+    font-size: 0.5rem;
     letter-spacing: 0.08em;
-  }
-
-  #hero {
-    padding-top: 10rem;
-    gap: 2rem;
-  }
-
-  .hero-image-frame {
-    width: 75%;
   }
 
   .hero-name {
     font-size: clamp(1.8rem, 8vw, 2.5rem);
-  }
-
-  .hero-number {
-    display: none;
   }
 
   .project-card {
