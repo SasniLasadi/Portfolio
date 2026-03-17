@@ -279,3 +279,27 @@ if (canvas) {
   });
 }
 
+/* ══════════════════════════════════════
+   6. ACTIVE NAV HIGHLIGHT
+══════════════════════════════════════ */
+
+const sections = document.querySelectorAll<HTMLElement>('section[id]');
+const navLinks  = document.querySelectorAll<HTMLAnchorElement>('.nav-links a');
+
+const navObserver = new IntersectionObserver(
+  (entries: IntersectionObserverEntry[]): void => {
+    entries.forEach((entry: IntersectionObserverEntry): void => {
+      if (entry.isIntersecting) {
+        const id: string = (entry.target as HTMLElement).id;
+        navLinks.forEach((link: HTMLAnchorElement): void => {
+          link.style.opacity = link.getAttribute('href') === `#${id}` ? '1' : '0.6';
+        });
+      }
+    });
+  },
+  { threshold: 0.4 }
+);
+
+sections.forEach((section: HTMLElement): void => navObserver.observe(section));
+
+
