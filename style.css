@@ -1337,11 +1337,12 @@ nav {
 ═══════════════════════════════════════ */
 footer {
   background: var(--ink);
-  padding: 3rem;
+  padding: 1.5rem;
 }
 
 .footer-bottom {
   padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: center;
 }
@@ -1350,6 +1351,7 @@ footer {
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   color: rgba(245, 240, 232, 0.25);
+  text-align: center;
 }
 
 /* ─── KEYFRAMES ─── */
